@@ -3,10 +3,11 @@ import { useState } from "react";
 import CustomForm from "./components/CustomForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
 
+  //The function addTask takes the task object created from the input at CustomForm. Then with setTasks, an anonymous function receives the previous state of "tasks" which initially is an empty array. When addTask receives a new object it updates the state and adds the new object.
   const addTask = (task) => {
-    console.log(task);
+    setTasks((prevState) => [...prevState, task]);
   };
 
   return (

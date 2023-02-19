@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite --open"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
