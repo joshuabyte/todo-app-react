@@ -11,6 +11,16 @@ function App() {
     setTasks((prevState) => [...prevState, task]);
   };
 
+  const deleteTask = (id) => {
+    setTasks((prevState) => prevState.filter((t) => t.id !== id));
+  };
+
+  const toggleTask = (id) => {
+    setTasks((prevState) =>
+      prevState.map((t) => (t.id === id ? { ...t, checked: !t.checked } : t))
+    );
+  };
+
   return (
     <div className="container">
       <header>
@@ -18,7 +28,13 @@ function App() {
       </header>
       <CustomForm addTask={addTask} />
       {/* A conditional rendering. If tasks is true, then it will render the TaskList component. */}
-      {tasks && <TaskList tasks={tasks} />}
+      {tasks && (
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          toggleTask={toggleTask}
+        />
+      )}
     </div>
   );
 }
