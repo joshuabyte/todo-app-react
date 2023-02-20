@@ -1,6 +1,7 @@
 import { useState } from "react";
 /* Importing the CustomForm component from the components folder. */
 import CustomForm from "./components/CustomForm";
+import TaskList from "./components/TaskList";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -16,6 +17,8 @@ function App() {
         <h1>My Task List</h1>
       </header>
       <CustomForm addTask={addTask} />
+      {/* A conditional rendering. If tasks is true, then it will render the TaskList component. */}
+      {tasks && <TaskList tasks={tasks} />}
     </div>
   );
 }
