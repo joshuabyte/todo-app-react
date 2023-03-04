@@ -1,6 +1,5 @@
 {
   "name": "todo-app-react",
-  "homepage": "https://protondk.github.io/todo-app-react",
   "private": false,
   "version": "0.0.0",
   "type": "module",
